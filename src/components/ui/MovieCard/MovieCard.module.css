@@ -1,0 +1,131 @@
+/* ── Dark cinema card ────────────────────────────────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #13131f;
+  border: 1px solid #2a2a3d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(99, 102, 241, 0.3);
+  border-color: #6366f1;
+}
+
+/* ── Poster ────────────────────────────────────────────────────────────────── */
+
+.posterWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: #1e1e2e;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .poster {
+  transform: scale(1.06);
+}
+
+/* Inline SVG fallback fills the whole poster area */
+.noImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Subtle gradient so badge text is readable over bright posters */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    transparent 40%,
+    transparent 70%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.typeBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(99, 102, 241, 0.88);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ── Info ──────────────────────────────────────────────────────────────────── */
+
+.info {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  background: linear-gradient(180deg, #13131f 0%, #0f0f1a 100%);
+}
+
+.title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #f1f1f5;
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.year {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.imdbLink {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #f5c518;
+  text-decoration: none;
+  background: #1a1200;
+  border: 1px solid rgba(245, 197, 24, 0.35);
+  padding: 2px 8px;
+  border-radius: 5px;
+  letter-spacing: 0.04em;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.imdbLink:hover {
+  background: rgba(245, 197, 24, 0.15);
+  border-color: #f5c518;
+}

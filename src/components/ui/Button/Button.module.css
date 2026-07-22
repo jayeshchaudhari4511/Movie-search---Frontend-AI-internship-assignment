@@ -1,0 +1,80 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Variants ──────────────────────────────────────────────────────────────── */
+.primary {
+  background: #6366f1;
+  color: #fff;
+}
+.primary:hover:not(:disabled) {
+  background: #4f46e5;
+}
+
+.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+.secondary:hover:not(:disabled) {
+  background: #d1d5db;
+}
+
+.danger {
+  background: #ef4444;
+  color: #fff;
+}
+.danger:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.ghost {
+  background: transparent;
+  color: #6366f1;
+  border: 2px solid #6366f1;
+}
+.ghost:hover:not(:disabled) {
+  background: #eef2ff;
+}
+
+/* ── Sizes ─────────────────────────────────────────────────────────────────── */
+.sm { padding: 0.35rem 0.75rem; font-size: 0.8rem; }
+.md { padding: 0.55rem 1.25rem; font-size: 0.95rem; }
+.lg { padding: 0.75rem 1.75rem; font-size: 1.05rem; }
+
+/* ── Spinner ───────────────────────────────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+}
