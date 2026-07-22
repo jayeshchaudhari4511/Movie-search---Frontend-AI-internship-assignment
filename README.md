@@ -65,3 +65,21 @@ src/
 - **Authentication:** Guided the setup for Firebase Email/Password auth and the implementation of protected routes.
 - **Debugging:** Assisted in resolving TypeScript module resolution errors and correcting import paths.
 - **Refactoring:** Executed targeted UI updates (like app renaming) securely across multiple files without breaking existing logic or layout.
+
+## Manual Improvements
+- **AI generated repetitive API calls inside multiple components.**
+  - I created a reusable API service instead.
+- **AI generated inline styles.**
+  - I replaced them with reusable Tailwind utility classes.
+- **AI used `any` types.**
+  - I replaced them with proper TypeScript interfaces.
+- **AI generated a large component.**
+  - I separated it into:
+    - SearchBar
+    - MovieCard
+    - MovieGrid
+- **AI forgot loading and empty states.**
+  - I implemented:
+    - Spinner
+    - No Results message
+    - Error UI
