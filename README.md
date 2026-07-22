@@ -67,6 +67,9 @@ src/
 - **Refactoring:** Executed targeted UI updates (like app renaming) securely across multiple files without breaking existing logic or layout.
 
 ## Manual Improvements
+
+Examples of manual improvements, corrections, or refactoring performed after reviewing AI-generated code.
+
 - **AI generated repetitive API calls inside multiple components.**
   - I created a reusable API service instead.
 - **AI generated inline styles.**
