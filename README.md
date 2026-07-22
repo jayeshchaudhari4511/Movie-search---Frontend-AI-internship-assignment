@@ -71,7 +71,20 @@ src/
 Examples of manual improvements, corrections, or refactoring performed after reviewing AI-generated code.
 
 - **AI generated repetitive API calls inside multiple components.**
-  - I created a reusable API service instead.
+  - I created a reusable API service instead. For example:
+    ```typescript
+    // Before: Repetitive inline fetch in components
+    const res = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`);
+    const data = await res.json();
+    
+    // After: Reusable API service
+    export async function searchMovies(query: string): Promise<OmdbMovie[]> {
+      const url = `${BASE_URL}/?s=${encodeURIComponent(query.trim())}&apikey=${API_KEY}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      return data.Search || [];
+    }
+    ```
 - **AI generated inline styles.**
   - I replaced them with reusable Tailwind utility classes.
 - **AI used `any` types.**
